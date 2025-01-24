@@ -47,7 +47,7 @@ print('Exercise 2:', simple_interest(1500, 3.5, 5))
 # Define your function and call it to display the discounted price.
 
 def apply_discount(price, discount):
-    new_price = price - (price * discount/100)
+    new_price = int(price - (price * discount/100))
     return(new_price)
 
 print('Exercise 3:', apply_discount(80, 10))
@@ -116,3 +116,41 @@ def largest(int1, int2, int3):
         return(int3)
 
 print('Exercise 6:', largest(10, 4, 2))
+
+
+# Exercise 7: Calculate a Tip
+#
+# Create a function called `calculate_tip`. It should take the bill amount and the tip percentage (as a whole number).
+# The function should return the amount of the tip.
+#
+# Examples:
+# calculate_tip(50, 20) should return 10.
+#
+# Write your function and test its output below.
+
+def calculate_tip(bill, tip):
+    tip = int(bill * (tip/100))
+    return(tip)
+
+
+print('Exercise 7:', calculate_tip(50, 20))
+
+
+# Exercise 8: Calculate Product of Numbers
+#
+# Write a function named `product` that takes an arbitrary number of numbers, multiplies them, and returns the product.
+# Review your notes on *args for handling an arbitrary number of arguments.
+#
+# Examples:
+# product(-1, 4) should return -4.
+# product(2, 5, 5) should return 50.
+#
+# Define the function and call it with different sets of numbers to test.
+
+def product(*args):
+    product = 1
+    for arg in args:
+        product *=arg
+    return(product)
+
+print('Exercise 8:', product(2, 5, 5, 10))
