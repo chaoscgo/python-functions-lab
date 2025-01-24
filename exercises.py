@@ -95,3 +95,24 @@ def sum_to(n):
     return(sum)
 
 print('Exercise 5:', sum_to(10))
+
+
+# Exercise 6: Find the Largest Number
+#
+# Write a function named `largest` that takes three integers as arguments and returns the largest of them.
+#
+# Examples:
+# largest(1, 2, 3) should return 3.
+# largest(10, 4, 2) should return 10.
+#
+# Define your function and test it with different inputs.
+
+def largest(int1, int2, int3):
+    if (int1 > int2) and (int1 > int3):
+        return(int1)
+    elif (int2 > int1) and (int2 > int3):
+        return(int2)
+    else:
+        return(int3)
+
+print('Exercise 6:', largest(10, 4, 2))
