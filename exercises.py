@@ -11,7 +11,7 @@
 
 def calculate_area_triangle(base, height):
     area = (base * height) /2
-    return(area)
+    return area
 
 
 print('Exercise 1:', calculate_area_triangle(7, 3))
@@ -30,7 +30,7 @@ print('Exercise 1:', calculate_area_triangle(7, 3))
 
 def simple_interest(principal, rate, time):
     interest = (principal * rate * time) /100
-    return(interest)
+    return interest
 
 print('Exercise 2:', simple_interest(1500, 3.5, 5))
 
@@ -47,8 +47,8 @@ print('Exercise 2:', simple_interest(1500, 3.5, 5))
 # Define your function and call it to display the discounted price.
 
 def apply_discount(price, discount):
-    new_price = int(price - (price * discount/100))
-    return(new_price)
+    new_price = price * (1 - discount/100) #return a float instead of an integer to avoid rounding down
+    return new_price
 
 print('Exercise 3:', apply_discount(80, 10))
 
@@ -69,13 +69,15 @@ print('Exercise 3:', apply_discount(80, 10))
 
 def convert_temperature(temp, unit):
     if unit == 'C':
-        new_temp = (temp * 9/5) + 32
+        return (temp * 9/5) + 32
     elif unit == 'F':
-        new_temp = (temp - 32) * 5/9
-    return(new_temp)
+        return (temp - 32) * 5/9
+    else:
+        return "Invalid unit.  Enter either C or F"
 
 print('Exercise 4: Convert 0°C to Fahrenheit:', convert_temperature(0, 'C'))
 print('Exercise 4: Convert 32°F to Celsius:', convert_temperature(32, 'F'))
+print('Exercise 4:', convert_temperature(32, 'X'))
 
 
 # Exercise 5: Sum to N
@@ -89,10 +91,10 @@ print('Exercise 4: Convert 32°F to Celsius:', convert_temperature(32, 'F'))
 # Define the function and then call it below.
 
 def sum_to(n):
-    sum = 0
+    total = 0
     for int in range(n+1):
-       sum +=int
-    return(sum)
+       total +=int
+    return total
 
 print('Exercise 5:', sum_to(10))
 
@@ -107,13 +109,13 @@ print('Exercise 5:', sum_to(10))
 #
 # Define your function and test it with different inputs.
 
-def largest(int1, int2, int3):
-    if (int1 > int2) and (int1 > int3):
-        return(int1)
-    elif (int2 > int1) and (int2 > int3):
-        return(int2)
+def largest(num1, num2, num3):
+    if (num1 > num2) and (num1 > num3):
+        return num1
+    elif (num2 > num1) and (num2 > num3):
+        return num2
     else:
-        return(int3)
+        return num3
 
 print('Exercise 6:', largest(10, 4, 2))
 
@@ -130,7 +132,7 @@ print('Exercise 6:', largest(10, 4, 2))
 
 def calculate_tip(bill, tip):
     tip = int(bill * (tip/100))
-    return(tip)
+    return tip
 
 
 print('Exercise 7:', calculate_tip(50, 20))
@@ -151,7 +153,7 @@ def product(*args):
     product = 1
     for arg in args:
         product *=arg
-    return(product)
+    return product
 
 print('Exercise 8:', product(2, 5, 5, 10))
 
@@ -180,6 +182,6 @@ def basic_calculator(num1, num2, operation):
         answer = int(num1 * num2)
     if operation == 'divide':
         answer = int(num1/num2)
-    return(answer)
+    return answer
 
 print('Exercise 9 Result:', basic_calculator(10, 5, "divide"))
